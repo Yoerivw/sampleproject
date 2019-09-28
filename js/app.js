@@ -1,24 +1,42 @@
 let appIdeas = [];
+let elForm = document.getElementById('formSignup');
+let idea = document.getElementById('idea').value;
+
 console.log('this is working');
 
-function addIdea() {
-    console.log('this is executed');
-    let idea = document.forms["addIdea"]["appEntry"].value;
-    console.log(idea);
-    let newEl = document.createElement('li');
 
-    let newIdea = document.createTextNode('lol');
-    console.log(newIdea);
-    newEl.appendChild(newIdea);
 
-    let position = document.getElementById('list-parent')[0];
 
-    position.appendChild(newEl);
-    appIdeas.push(idea);
 
+
+
+function addIdea(e, idea) {
+    let input = this.idea.value;
+    console.log("this function is being executed");
+    console.log(input);
+
+
+    if (!input) {
+        alert("please fill out something relevant");
+        e.preventDefault();
+    } else {
+        input = this.idea.value;
+        console.log('input' + input);
+        e.preventDefault();
+        let newEl = document.createElement('li');
+        console.log('newEl' + newEl);
+        let newIdea = document.createTextNode(input);
+        console.log('newIdea' + newIdea);
+        newEl.appendChild(newIdea);
+
+        let position = document.getElementsByTagName('ul')[0];
+
+        position.appendChild(newEl);
+
+
+    }
 
 
 }
-window.onload = function() {
-    document.getElementById("btn").addEventListener("click", addIdea)
-}
+
+elForm.addEventListener('submit', addIdea, false);

@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="js/app.js"></script>
+
     <title>My App</title>
 </head>
 
 <body>
     <h1>Project vanilla javascript!</h1>
-    <form name="addIdea" onsubmit="return addIdea();">
-        New App Idea: <input type="text" name="appEntry">
-        <input id="btn" type="submit" onclick="addIdea();" value="submit">
+    <form id="formSignup" name="form" method="post" action="http://www.example.org/register">
+        New App Idea: <input id="idea" type="text" name="formInput">
+        <input id="btn" type="submit" value="submit">
     </form>
     <h2>App Ideas</h2>
     <ul id="list-parent">
@@ -21,5 +21,6 @@
     </ul>
 </body>
 
+<script type="text/javascript" src="js/app.js"></script>
 
 </html>
